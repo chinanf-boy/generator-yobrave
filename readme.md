@@ -1,4 +1,4 @@
-# generator-YobraveNm [![Build Status](https://travis-ci.org/sindresorhus/generator-YobraveNm.svg?branch=master)](https://travis-ci.org/chinanf-boy/generator-YobraveNm)
+# generator-yobrave [![Build Status](https://travis-ci.org/sindresorhus/generator-yobrave.svg?branch=master)](https://travis-ci.org/chinanf-boy/generator-yobrave)
 
 > Scaffold out a node modules
 
@@ -10,7 +10,7 @@
 ## Install
 
 ```
-npm install --global yo generator-YobraveNm
+npm install --global yo generator-yobrave
 ```
 
 
@@ -19,16 +19,16 @@ npm install --global yo generator-YobraveNm
 With [yo](https://github.com/yeoman/yo):
 
 ```
-$ yo YobraveNm
+$ yo yobrave
 ```
 
 There are multiple command-line options available:
 
 ```
-$ yo YobraveNm --help
+$ yo yobrave --help
 
   Usage:
-    yo YobraveNm [options]
+    yo yobrave [options]
 
   Options:
     --help          # Print the generator's options and usage
