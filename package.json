@@ -1,9 +1,9 @@
 {
-  "name": "generator-YobraveNm",
+  "name": "generator-yobrave",
   "version": "3.5.0",
   "description": "Scaffold out a node module",
   "license": "MIT",
-  "repository": "chinanf-boy/generator-YobraveNm",
+  "repository": "chinanf-boy/generator-yobrave",
   "author": {
     "name": "yobrave",
     "email": "yobrave@outlook.com",
