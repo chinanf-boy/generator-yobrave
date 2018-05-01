@@ -6,9 +6,12 @@
 ## Install
 
 ```
-$ npm install <%= moduleName %>
+npm install <%= moduleName %>
 ```
 
+```
+yarn add <%= moduleName %>
+```
 
 ## Usage
 
@@ -43,7 +46,7 @@ Lorem ipsum.<% if (cli) { %>
 ## CLI
 
 ```
-$ npm install --global <%= moduleName %>
+npm install --global <%= moduleName %>
 ```
 
 ```

@@ -14,7 +14,10 @@
 		"node": ">=4"
 	},
 	"scripts": {
-		"test": "xo && <% if (nyc) { %>nyc <% } %>ava"
+		"test": "xo && <% if (nyc) { %>nyc <% } %>ava",
+		"npmUp": "npm version patch && npm publish",
+		"git": "git push && git push --tags",
+		"pub" : "npm run test && npm run npmUp && npm run git"
 	},
 	"files": [
 		"index.js"<% if (cli) { %>,
@@ -32,7 +35,8 @@
 		"ava": "^0.20.0",<% if (codecov) { %>
 		"codecov": "^2.2.0",<% } %><% if (nyc) { %>
 		"nyc": "^11.0.0",<% } %>
-		"xo": "^0.18.2"
+		"xo": "^0.18.2",
+		"validate-switch": "^0.0.1"
 	}<% if (codecov) { %>,
 	"nyc": {
 		"reporter": [
