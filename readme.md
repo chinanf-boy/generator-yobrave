@@ -1,10 +1,8 @@
-# generator-nm [![Build Status](https://travis-ci.org/sindresorhus/generator-nm.svg?branch=master)](https://travis-ci.org/sindresorhus/generator-nm)
+# generator-YobraveNm [![Build Status](https://travis-ci.org/sindresorhus/generator-YobraveNm.svg?branch=master)](https://travis-ci.org/chinanf-boy/generator-YobraveNm)
 
-> Scaffold out a [node module](https://github.com/sindresorhus/node-module-boilerplate)
+> Scaffold out a node modules
 
-Optionally with a [CLI](http://en.wikipedia.org/wiki/Command-line_interface).
-
-This is what I use for [my own modules](https://www.npmjs.com/~sindresorhus).
+### Copt by `sindresorhus/generator-nm`
 
 ![](screenshot.png)
 
@@ -12,7 +10,7 @@ This is what I use for [my own modules](https://www.npmjs.com/~sindresorhus).
 ## Install
 
 ```
-$ npm install --global yo generator-nm
+npm install --global yo generator-YobraveNm
 ```
 
 
@@ -21,16 +19,16 @@ $ npm install --global yo generator-nm
 With [yo](https://github.com/yeoman/yo):
 
 ```
-$ yo nm
+$ yo YobraveNm
 ```
 
 There are multiple command-line options available:
 
 ```
-$ yo nm --help
+$ yo YobraveNm --help
 
   Usage:
-    yo nm [options]
+    yo YobraveNm [options]
 
   Options:
     --help          # Print the generator's options and usage
