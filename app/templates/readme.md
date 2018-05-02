@@ -44,6 +44,7 @@ Type: | `boolean`
 Default: | `false`
 Desc: | Lorem ipsum.
 
+<% if (cli) { %>
 ## CLI
 
 ```
