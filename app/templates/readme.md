@@ -29,19 +29,20 @@ const <%= camelModuleName %> = require('<%= moduleName %>');
 
 #### input
 
-Type: `string`
-
-Lorem ipsum.
+name: | input
+---------|----------
+Type: | `string`
+Desc: | Lorem ipsum.
 
 #### options
 
 ##### foo
 
-Type: `boolean`<br>
-Default: `false`
-
-Lorem ipsum.<% if (cli) { %>
-
+ name: | foo
+---------|----------
+Type: | `boolean`
+Default: | `false`
+Desc: | Lorem ipsum.
 
 ## CLI
 
