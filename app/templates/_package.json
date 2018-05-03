@@ -14,11 +14,20 @@
 		"node": ">=4"
 	},
 	"scripts": {
-		"test": "xo && <% if (nyc) { %>nyc <% } %>ava",
+		"test": "<% if (nyc) { %>nyc <% } %>ava",
+		"precommit": "lint-staged",
+		"prettier":
+		"prettier --single-quote --trailing-comma es5 --write 'src/**/*.js'",
 		"npmUp": "npm version patch && npm publish",
 		"git": "git push && git push --tags",
 		"pub" : "npm run test && npm run npmUp && npm run git"
 	},
+	"lint-staged": {
+		"*.{js,json,css,md}": [
+			"prettier --single-quote --trailing-comma es5 --write",
+			 "git add"
+			]
+	  },
 	"files": [
 		"index.js"<% if (cli) { %>,
 		"cli.js"<% } %>
@@ -32,10 +41,12 @@
 		"meow": "^3.7.0"
 	<% } %>},
 	"devDependencies": {
+		"lint-staged": "^7.0.0",
+		"husky": "^0.14.3",
+		"prettier": "^1.12.1"
 		"ava": "^0.20.0",<% if (codecov) { %>
 		"codecov": "^2.2.0",<% } %><% if (nyc) { %>
 		"nyc": "^11.0.0",<% } %>
-		"xo": "^0.18.2",
 		"validate-switch": "^0.0.2"
 	}<% if (codecov) { %>,
 	"nyc": {
