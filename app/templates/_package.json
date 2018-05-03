@@ -47,7 +47,7 @@
 		"prettier": "^1.12.1",
 		"ava": "^0.20.0",<% if (codecov) { %>
 		"codecov": "^2.2.0",<% } %><% if (nyc) { %>
-		"nyc": "^11.0.0",<% } %>
+		"nyc": "^11.0.0"<% } %>
 	}<% if (codecov) { %>,
 	"nyc": {
 		"reporter": [
