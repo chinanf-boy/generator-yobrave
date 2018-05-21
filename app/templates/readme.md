@@ -1,9 +1,18 @@
-# <%= repoName %> [![Build Status](https://travis-ci.org/<%= githubUsername %>/<%= repoName %>.svg?branch=master)](https://travis-ci.org/<%= githubUsername %>/<%= repoName %>)<% if (codecov) { %> [![codecov](https://codecov.io/gh/<%= githubUsername %>/<%= repoName %>/badge.svg?branch=master)](https://codecov.io/gh/<%= githubUsername %>/<%= repoName %>?branch=master)<% } %>
+# <%= repoName %> [![Build Status](https://travis-ci.org/<%= githubUsername %>/<%= repoName %>.svg?branch=master)](https://travis-ci.org/<%= githubUsername %>/<%= repoName %>)<% if (codecov) { %> [![codecov](https://codecov.io/gh/<%= githubUsername %>/<%= repoName %>/badge.svg?branch=master)](https://codecov.io/gh/<%= githubUsername %>/<%= repoName %>?branch=master)<% } %> [![explain](http://llever.com/explain.svg)](https://github.com/chinanf-boy/<%= repoName %>-explain)
 
 > <%= moduleDescription %>
 
+[中文](./readme.md) | ~~[english](./readme.en.md)~~
 
 ## Install
+
+<% if (cli) { %>
+
+```
+npm i -g <%= moduleName %>
+```
+
+<% }else{ %>
 
 ```
 npm install <%= moduleName %>
@@ -12,6 +21,9 @@ npm install <%= moduleName %>
 ```
 yarn add <%= moduleName %>
 ```
+
+<% } %>
+
 
 ## Usage
 
