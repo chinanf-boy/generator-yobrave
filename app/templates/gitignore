@@ -1,5 +1,5 @@
 node_modules
-.yo-rc
+.yo-rc.*
 yarn.lock<% if (nyc) { %>
 .nyc_output
 coverage<% } %>
