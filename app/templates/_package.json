@@ -16,8 +16,6 @@
 	"scripts": {
 		"test": "<% if (nyc) { %>nyc <% } %>ava",
 		"precommit": "lint-staged",
-		"prettier":
-		"prettier --single-quote --trailing-comma es5 --write 'src/**/*.js'",
 		"npmUp": "npm version patch && npm publish",
 		"git": "git push && git push --tags",
 		"pub" : "npm run test && npm run npmUp && npm run git"
@@ -48,8 +46,8 @@
 		"husky": "^0.14.3",
 		"prettier": "^1.12.1",
 		"ava": "^0.20.0",<% if (codecov) { %>
-		"codecov": "^2.2.0",<% } %><% if (nyc) { %>
-		"nyc": "^11.0.0"<% } %>
+		"codecov": "^3.0.2",<% } %><% if (nyc) { %>
+		"nyc": "^11.8.0"<% } %>
 	}<% if (codecov) { %>,
 	"nyc": {
 		"reporter": [
