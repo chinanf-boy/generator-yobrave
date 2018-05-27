@@ -51,12 +51,13 @@
 
 	},
 	"devDependencies": {
+		<% if (codecov) { %>
+		"codecov": "^3.0.2",<% } %><% if (nyc) { %>
+		"nyc": "^11.8.0",<% } %>
 		"lint-staged": "^7.0.0",
 		"microbundle": "^0.4.4",
 		"prettier": "^1.12.1",
-		"ava": "^0.25.0",<% if (codecov) { %>
-		"codecov": "^3.0.2",<% } %><% if (nyc) { %>
-		"nyc": "^11.8.0"<% } %>
+		"ava": "^0.25.0"
 	}<% if (codecov) { %>,
 	"nyc": {
 		"reporter": [
