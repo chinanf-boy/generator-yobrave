@@ -70,7 +70,7 @@ test.serial('nyc option', async () => {
 	assert.noFile('cli.js');
 	assert.fileContent('.gitignore', /\.nyc_output/);
 	assert.fileContent('.gitignore', /coverage/);
-	assert.fileContent('package.json', /"nyc ava"/);
+	assert.fileContent('package.json', /"nyc ava -v -s"/);
 	assert.fileContent('package.json', /"nyc": "/);
 	assert.noFileContent('package.json', /"codecov":/);
 	assert.noFileContent('package.json', /"lcov"/);
@@ -92,7 +92,7 @@ test.serial('codecov option', async () => {
 	assert.noFile('cli.js');
 	assert.fileContent('.gitignore', /\.nyc_output/);
 	assert.fileContent('.gitignore', /coverage/);
-	assert.fileContent('package.json', /"nyc ava"/);
+	assert.fileContent('package.json', /"nyc ava -v -s"/);
 	assert.fileContent('package.json', /"nyc": "/);
 	assert.fileContent('package.json', /"codecov":/);
 	assert.fileContent('package.json', /"lcov"/);
