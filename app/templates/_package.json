@@ -16,7 +16,8 @@
 		"node": ">=4"
 	},
 	"scripts": {
-		"test": "<% if (nyc) { %>nyc <% } %>ava -v -s",
+		"test": "<% if (nyc) { %>nyc <% } %>ava -v",
+		"dev": "microbundle watch",
 		"precommit": "lint-staged",
 		"prepublish": "npm run build",
 		"build": "microbundle",
@@ -26,7 +27,8 @@
 	},
 	"size-limit": [
 		{
-		  "path": "dist/<%= moduleName %>.js"
+		  "path": "dist/<%= moduleName %>.js",
+		  "gzip": false
 		}
 	 ],
 	"lint-staged": {
@@ -46,9 +48,7 @@
 		<% if (cli) { %>
 		"meow": "^3.7.0",<% } %>
 		"weoptions": "^0.0.7",
-		"two-log": "^0.0.2"
-
-
+		"two-log": "^0.0.4"
 	},
 	"devDependencies": {
 		<% if (codecov) { %>
