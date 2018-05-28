@@ -37,7 +37,8 @@
 			 "git add"
 			]
 	  },
-	"files": [
+	"files": [<% if (cli) { %>
+		"cli.js"<% } %>
 	],
 	"keywords": [<% if (cli) { %>
 		"cli-app",
