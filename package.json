@@ -1,6 +1,6 @@
 {
   "name": "generator-yobrave",
-  "version": "3.5.17",
+  "version": "3.5.18",
   "description": "Scaffold out a node module",
   "license": "MIT",
   "repository": "chinanf-boy/generator-yobrave",
@@ -13,8 +13,8 @@
     "node": ">=4"
   },
   "scripts": {
-		"test": "xo && ava",
-		"precommit":"npm test",
+    "test": "xo && ava",
+    "precommit": "npm test",
     "npmUp": "npm version patch && npm publish",
     "git": "git push && git push --tags",
     "pub": "npm run test && npm run npmUp && npm run git"
