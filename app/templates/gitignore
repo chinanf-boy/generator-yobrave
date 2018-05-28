@@ -1,4 +1,5 @@
 node_modules
+dist
 .yo-rc.*
 yarn.lock<% if (nyc) { %>
 .nyc_output
