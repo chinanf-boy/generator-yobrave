@@ -13,7 +13,8 @@
     "node": ">=4"
   },
   "scripts": {
-    "test": "xo && ava",
+		"test": "xo && ava",
+		"precommit":"npm test",
     "npmUp": "npm version patch && npm publish",
     "git": "git push && git push --tags",
     "pub": "npm run test && npm run npmUp && npm run git"
