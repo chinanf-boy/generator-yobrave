@@ -49,7 +49,7 @@
 		<% if (cli) { %>
 		"meow": "^5.0.0",
 		"weoptions": "^0.0.9",
-		"two-log": "^0.0.8"<% } %>
+		"two-log": "^0.0.9"<% } %>
 	},
 	"devDependencies": {
 		<% if (codecov) { %>
