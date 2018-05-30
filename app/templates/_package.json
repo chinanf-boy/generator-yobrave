@@ -47,9 +47,9 @@
 	],
 	"dependencies":{
 		<% if (cli) { %>
-		"meow": "^5.0.0",<% } %>
+		"meow": "^5.0.0",
 		"weoptions": "^0.0.9",
-		"two-log": "^0.0.6"
+		"two-log": "^0.0.6"<% } %>
 	},
 	"devDependencies": {
 		<% if (codecov) { %>
