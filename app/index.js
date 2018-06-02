@@ -20,6 +20,11 @@ module.exports = class extends Generator {
 			desc: 'Add a CLI'
 		});
 
+		this.option('build', {
+			type: 'boolean',
+			desc: 'Add a Build tool'
+		});
+
 		this.option('coverage', {
 			type: 'boolean',
 			desc: 'Add code coverage with nyc'
@@ -59,7 +64,15 @@ module.exports = class extends Generator {
 			type: 'confirm',
 			default: Boolean(this.options.cli),
 			when: () => this.options.cli === undefined
-		}, {
+		},
+		{
+			name: 'build',
+			message: 'Do you need a build like microbundle?',
+			type: 'confirm',
+			default: Boolean(this.options.build),
+			when: () => this.options.build === undefined
+		},
+		{
 			name: 'nyc',
 			message: 'Do you need code coverage?',
 			type: 'confirm',
@@ -74,6 +87,7 @@ module.exports = class extends Generator {
 		}]).then(props => {
 			const or = (option, prop) => this.options[option] === undefined ? props[prop || option] : this.options[option];
 
+			const build = or('build');
 			const cli = or('cli');
 			const codecov = or('codecov');
 			const nyc = codecov || or('coverage', 'nyc');
@@ -92,7 +106,8 @@ module.exports = class extends Generator {
 				humanizedWebsite: humanizeUrl(props.website),
 				cli,
 				nyc,
-				codecov
+				codecov,
+				build
 			};
 
 			const mv = (from, to) => {

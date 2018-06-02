@@ -16,11 +16,11 @@
 		"node": ">=4"
 	},
 	"scripts": {
-		"test": "<% if (nyc) { %>nyc <% } %>ava -v",
+		"test": "<% if (nyc) { %>nyc <% } %>ava -v",<% if (build) { %>
 		"dev": "microbundle watch",
-		"precommit": "lint-staged",
 		"prepublish": "npm run build",
-		"build": "microbundle",
+		"build": "microbundle",<% } %>
+		"precommit": "lint-staged",
 		"pub" : "npm run test && npm run npmUp && npm run git",
 		"npmUp": "npm version patch && npm publish",
 		"git": "git push && git push --tags"
@@ -55,8 +55,8 @@
 		<% if (codecov) { %>
 		"codecov": "^3.0.2",<% } %><% if (nyc) { %>
 		"nyc": "^11.8.0",<% } %>
-		"lint-staged": "^7.0.0",
-		"microbundle": "^0.4.4",
+		"lint-staged": "^7.0.0",<% if (build) { %>
+		"microbundle": "^0.4.4",<% } %>
 		"prettier": "^1.12.1",
 		"ava": "^0.25.0"
 	}<% if (codecov) { %>,
