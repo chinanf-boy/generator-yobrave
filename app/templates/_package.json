@@ -2,9 +2,9 @@
 	"name": "<%= moduleName %>",
 	"version": "0.0.0",
 	"description": "<%= moduleDescription %>",
-	"license": "MIT",
+	"license": "MIT",<% if (build) { %>
 	"main":"dist/<%= moduleName %>.js",
-	"module":"dist/<%= moduleName %>.m.js",
+	"module":"dist/<%= moduleName %>.m.js",<% } %>
 	"repository": "<%= githubUsername %>/<%= repoName %>",
 	"author": {
 		"name": "<%= name %>",
