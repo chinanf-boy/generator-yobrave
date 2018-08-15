@@ -49,8 +49,9 @@
 	"dependencies":{
 		<% if (cli) { %>
 		"meow": "^5.0.0",
+		"turbocolor": "^2.4.5",
 		"weoptions": "^0.0.11",
-		"two-log": "^0.0.10"<% } %>
+		"two-log": "^0.0.11"<% } %>
 	},
 	"devDependencies": {
 		<% if (codecov) { %>

@@ -116,11 +116,13 @@ module.exports = class extends Generator {
 
 			this.fs.copyTpl([
 				`${this.templatePath()}/**`,
-				'!**/cli.js'
+				'!**/cli.js',
+				'!**/weoptions.js'
 			], this.destinationPath(), tpl);
 
 			if (cli) {
 				this.fs.copyTpl(this.templatePath('cli.js'), this.destinationPath('cli.js'), tpl);
+				this.fs.copyTpl(this.templatePath('weoptions.js'), this.destinationPath('weoptions.js'), tpl);
 			}
 
 			mv('editorconfig', '.editorconfig');

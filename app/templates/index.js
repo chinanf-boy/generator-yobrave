@@ -1,5 +1,5 @@
 'use strict';
-module.exports = (input, opts) => {
+exports = module.exports = function<%= camelModuleName %>(input, opts) => {
 	if (typeof input !== 'string') {
 		throw new TypeError(`Expected a string, got ${typeof input}`);
 	}
@@ -8,3 +8,5 @@ module.exports = (input, opts) => {
 
 	return input + ' & ' + (opts.postfix || 'rainbows');
 };
+
+exports.<%= camelModuleName %> = <%= camelModuleName %>

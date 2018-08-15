@@ -37,6 +37,7 @@ test.serial('generates expected files', async () => {
 	]);
 
 	assert.noFile('cli.js');
+	assert.noFile('weoptions.js');
 });
 
 test.serial('CLI option', async () => {
@@ -50,6 +51,7 @@ test.serial('CLI option', async () => {
 	await pify(generator.run.bind(generator))();
 
 	assert.file('cli.js');
+	assert.file('weoptions.js');
 	assert.fileContent('package.json', /"bin":/);
 	assert.fileContent('package.json', /"bin": "cli.js"/);
 	assert.fileContent('package.json', /"meow"/);
@@ -83,6 +85,7 @@ test.serial('nyc option', async () => {
 	await pify(generator.run.bind(generator))();
 
 	assert.noFile('cli.js');
+	assert.noFile('weoptions.js');
 	assert.fileContent('.gitignore', /\.nyc_output/);
 	assert.fileContent('.gitignore', /coverage/);
 	assert.fileContent('package.json', /"nyc ava -v"/);
@@ -105,6 +108,7 @@ test.serial('codecov option', async () => {
 	await pify(generator.run.bind(generator))();
 
 	assert.noFile('cli.js');
+	assert.noFile('weoptions.js');
 	assert.fileContent('.gitignore', /\.nyc_output/);
 	assert.fileContent('.gitignore', /coverage/);
 	assert.fileContent('package.json', /"nyc ava -v"/);
