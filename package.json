@@ -13,7 +13,7 @@
     "node": ">=4"
   },
   "scripts": {
-    "test": "xo && ava",
+    "test": "ava",
     "precommit": "npm test",
     "npmUp": "npm version patch && npm publish",
     "git": "git push && git push --tags",
@@ -46,16 +46,10 @@
   "devDependencies": {
     "ava": "*",
     "pify": "^3.0.0",
-    "xo": "*",
     "yeoman-assert": "^3.0.0",
     "yeoman-test": "^1.0.0"
   },
   "ava": {
     "failWithoutAssertions": false
-  },
-  "xo": {
-    "ignores": [
-      "app/templates/**"
-    ]
   }
 }

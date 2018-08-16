@@ -73,11 +73,19 @@ $ <%= repoName %> --help
     --foo  Lorem ipsum [Default: false]
 
   Examples
-    $ <%= repoName %>
-    unicorns & rainbows
     $ <%= repoName %> ponies
     ponies & rainbows
-```<% } %>
+```
+
+
+## concat
+
+- [two-log](https://github.com/chinanf-boy/two-log) just two log with ora/winston
+- [weoptions](https://github.com/chinanf-boy/weoptions) need global store object with id
+
+
+<% } %>
+
 
 
 ## License

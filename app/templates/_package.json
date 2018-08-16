@@ -39,7 +39,9 @@
 			]
 	  },
 	"files": [<% if (cli) { %>
-		"cli.js"<% } %>
+		"cli.js",<% } %>
+		"src",
+		"lib"
 	],
 	"keywords": [<% if (cli) { %>
 		"cli-app",
