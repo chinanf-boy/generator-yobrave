@@ -79,7 +79,8 @@ test.serial('nyc option', async () => {
 		website: 'test.com',
 		cli: false,
 		nyc: true,
-		codecov: false
+		codecov: false,
+		build:true
 	});
 
 	await pify(generator.run.bind(generator))();
@@ -88,7 +89,7 @@ test.serial('nyc option', async () => {
 	assert.noFile('weoptions.js');
 	assert.fileContent('.gitignore', /\.nyc_output/);
 	assert.fileContent('.gitignore', /coverage/);
-	assert.fileContent('package.json', /"nyc ava -v"/);
+	assert.fileContent('package.json', /"npm run build && nyc ava -v"/);
 	assert.fileContent('package.json', /"nyc": "/);
 	assert.noFileContent('package.json', /"codecov":/);
 	assert.noFileContent('package.json', /"lcov"/);
@@ -102,7 +103,8 @@ test.serial('codecov option', async () => {
 		website: 'test.com',
 		cli: false,
 		nyc: true,
-		codecov: true
+		codecov: true,
+		build:false
 	});
 
 	await pify(generator.run.bind(generator))();

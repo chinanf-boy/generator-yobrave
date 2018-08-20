@@ -10,22 +10,28 @@
 	"author": {
 		"name": "<%= name %>",
 		"email": "<%= email %>",
-		"url": "<%= humanizedWebsite %>"
+		"url": "http://<%= humanizedWebsite %>"
 	},<% if (cli) { %>
 	"bin": "cli.js",<% } %>
 	"engines": {
 		"node": ">=4"
 	},
 	"scripts": {
-		"test": "<% if (nyc) { %>nyc <% } %>ava -v",<% if (build) { %>
-		"pretest": "npm run build",
+		"test": "<% if (build) { %>npm run build && <% } %><% if (nyc) { %>nyc <% } %>ava -v",<% if (build) { %>
 		"dev": "microbundle watch",
-		"prepublish": "npm run build",
 		"build": "microbundle",<% } %>
+
+		"prepublish": "npm run test",
 		"precommit": "lint-staged",
 		"pub" : "npm run test && npm run npmUp && npm run git",
 		"npmUp": "npm version patch && npm publish",
 		"git": "git push && git push --tags"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged",
+			"pre-push": "npm test"
+		}
 	},
 	"size-limit": [
 		{
@@ -34,10 +40,13 @@
 		}
 	 ],
 	"lint-staged": {
-		"*.{js,json,css,md}": [
-			"prettier --single-quote --trailing-comma es5 --write",
-			 "git add"
-			]
+		"linters":{
+			"*.{js,json,css,md}": [
+				"prettier --single-quote --trailing-comma es5 --write",
+				 "git add"
+				]
+		},
+		"ignore":["**/dist/*.js"]
 	  },
 	"files": [<% if (cli) { %>
 		"cli.js",<% } %>
@@ -62,7 +71,7 @@
 		"nyc": "^11.8.0",<% } %>
 		"lint-staged": "^7.0.0",<% if (build) { %>
 		"microbundle": "^0.4.4",<% } %>
-		"prettier": "^1.12.1",
+		"husky": "1.0.0-rc.13",
 		"ava": "^0.25.0"
 	}<% if (codecov) { %>,
 	"nyc": {
