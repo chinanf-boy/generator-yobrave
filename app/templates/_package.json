@@ -23,14 +23,13 @@
 
 		"prepublish": "npm run test",
 		"precommit": "lint-staged",
-		"pub" : "npm run git && npm run npmUp",
+		"pub" : "npm run test && npm run npmUp && npm run git",
 		"npmUp": "npm version patch && npm publish",
 		"git": "git push && git push --tags"
 	},
 	"husky": {
 		"hooks": {
 			"pre-commit": "lint-staged",
-			"pre-push": "npm test"
 		}
 	},
 	"size-limit": [
