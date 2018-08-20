@@ -34,6 +34,6 @@ if(!cli.input[0]){
 const log = twoLog(cli.flags['D'])
 log.start(`Start <%= camelModuleName %> ..`)
 
-log.text(cli.input[0] || 'unicorns');
+log.text(cli.input[0] || weOpts.get('name'));
 
 log.stop(`<%= camelModuleName %> Done`)
