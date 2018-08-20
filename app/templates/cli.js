@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 const meow = require('meow');
-const twoLog = require('two-log')
+const twoLog = require('two-log-min')
 const weOpts = require('./weoptions.js')
 const tc = require("turbocolor")
 let g = tc.green
