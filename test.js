@@ -68,7 +68,6 @@ test.serial('Build option', async () => {
 	await pify(generator.run.bind(generator))();
 
 	assert.fileContent('package.json', /"build":/);
-	assert.fileContent('package.json', /"prepublish":/);
 	assert.fileContent('package.json', /"microbundle"/);
 });
 
