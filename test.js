@@ -94,6 +94,7 @@ test.serial('nyc option', async () => {
 	assert.noFileContent('package.json', /"codecov":/);
 	assert.noFileContent('package.json', /"lcov"/);
 	assert.noFileContent('.travis.yml', /codecov/);
+	assert.noFileContent('readme.md',/codecov/)
 });
 
 test.serial('codecov option', async () => {
@@ -140,7 +141,7 @@ test.serial('prompts for description', async () => {
 	await pify(generator.run.bind(generator))();
 
 	assert.fileContent('package.json', /"description": "foo",/);
-	assert.fileContent('readme.md', /> foo/);
+	assert.fileContent('readme.md', /foo/);
 });
 
 test.serial('defaults to superb description', async () => {
@@ -156,5 +157,5 @@ test.serial('defaults to superb description', async () => {
 	await pify(generator.run.bind(generator))();
 
 	assert.fileContent('package.json', /"description": "My .+ module",/);
-	assert.fileContent('readme.md', /> My .+ module/);
+	assert.fileContent('readme.md', /My .+ module/);
 });
