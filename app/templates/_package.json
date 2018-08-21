@@ -57,7 +57,7 @@
 	],
 	"dependencies":{
 		<% if (cli) { %>
-		"meow": "^5.0.0",
+		"commander": "*",
 		"turbocolor": "^2.4.5",
 		"weoptions": "*",
 		"two-log-min": "*"<% } %>

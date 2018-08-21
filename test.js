@@ -52,9 +52,10 @@ test.serial('CLI option', async () => {
 
 	assert.file('cli.js');
 	assert.file('weoptions.js');
+	assert.file('util.js');
 	assert.fileContent('package.json', /"bin":/);
 	assert.fileContent('package.json', /"bin": "cli.js"/);
-	assert.fileContent('package.json', /"meow"/);
+	assert.fileContent('package.json', /"commander"/);
 });
 
 test.serial('Build option', async () => {
