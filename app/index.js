@@ -126,6 +126,7 @@ module.exports = class extends Generator {
 			}
 
 			mv('editorconfig', '.editorconfig');
+			mv('_index.js', `${props.moduleName}.js`);
 			mv('gitattributes', '.gitattributes');
 			mv('gitignore', '.gitignore');
 			mv('travis.yml', '.travis.yml');

@@ -14,7 +14,7 @@ test.beforeEach(async () => {
 
 test.serial('generates expected files', async () => {
 	helpers.mockPrompt(generator, {
-		moduleName: 'test',
+		moduleName: 'some-module',
 		githubUsername: 'test',
 		website: 'test.com',
 		cli: false
@@ -28,7 +28,7 @@ test.serial('generates expected files', async () => {
 		'.gitattributes',
 		'.gitignore',
 		'.travis.yml',
-		'index.js',
+		'some-module.js',
 		'license',
 		'package.json',
 		'readme.md',
