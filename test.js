@@ -14,7 +14,7 @@ test.beforeEach(async () => {
 
 test.serial('generates expected files', async () => {
 	helpers.mockPrompt(generator, {
-		moduleName: 'some-module',
+		moduleName: 'test',
 		githubUsername: 'test',
 		website: 'test.com',
 		cli: false
@@ -28,7 +28,7 @@ test.serial('generates expected files', async () => {
 		'.gitattributes',
 		'.gitignore',
 		'.travis.yml',
-		'some-module.js',
+		'index.js',
 		'license',
 		'package.json',
 		'readme.md',
@@ -52,7 +52,6 @@ test.serial('CLI option', async () => {
 
 	assert.file('cli.js');
 	assert.file('weoptions.js');
-	assert.file('util.js');
 	assert.fileContent('package.json', /"bin":/);
 	assert.fileContent('package.json', /"bin": "cli.js"/);
 	assert.fileContent('package.json', /"commander"/);

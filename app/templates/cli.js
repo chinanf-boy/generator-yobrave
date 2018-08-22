@@ -5,28 +5,17 @@ const meow = require('meow');
 const twoLog = require('two-log-min')
 const program = require('commander')
 const weOpts = require('./weoptions.js')
-const {	g,	c,	y,	b, r } = require('./util')
+const {	g,	c,	y,	b, r } = require('yobrave-util')
 
 const <%= camelModuleName %> = require('.');
 
 program
-  .version(require('../package.json').version, '-v, --version'))
+  .version(require('../package.json').version, '-v, --version')
   .usage('<input> [options]')
-// program
 //   .command('dev [targetDir]')
 	.description('say rainbows')
-	.arguments('<input> [optoins]')
-  // .option('-p, --port <port>', 'use specified port (default: 8080)')
   .option('-D, --debug [debug]', 'debug: boolean/string ', false)
-  .action((input = 'rainbows', { debug }) => {
 
-		const log = twoLog(debug)
-
-		log.start(`Start <%= camelModuleName %> ..`)
-
-		log.text(input || weOpts.get('name'));
-
-		log.stop(`<%= camelModuleName %> Done`)
 
     // wrapCommand(dev)(path.resolve(dir), { host, port })
 	})
@@ -41,7 +30,7 @@ program
 
 program.on('--help', () => {
   console.log()
-  console.log(`  Run ${c(`<%= camelModuleName %> <command> --help`)} for detailed usage of given command.`)
+  console.log(`  Run ${g(`<%= moduleName %> --help`)} for detailed usage of given command.`)
   console.log()
 })
 
@@ -76,8 +65,23 @@ enhanceErrorMessages('optionMissingArgument', (option, flag) => {
 program.parse(process.argv)
 
 if (!process.argv.slice(2).length) {
-  program.outputHelp((t) =>r(t))
+  program.outputHelp((t) =>{
+		let all = t.split(require('os').EOL)
+		return c(t)
+	})
+	process.exitCode = 1
+	return
 }
+
+const log = twoLog(program.debug)
+
+log.start(`Start <%= moduleName %> ..`)
+
+log.text(program.args);
+
+log.text(weOpts.get('name'));
+
+log.stop(`<%= moduleName %> Done`,{ora:'succeed'})
 
 function wrapCommand (fn) {
   return (...args) => {

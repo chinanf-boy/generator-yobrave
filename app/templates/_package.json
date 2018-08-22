@@ -19,7 +19,7 @@
 	"scripts": {
 		"test": "<% if (build) { %>npm run build && <% } %><% if (nyc) { %>nyc <% } %>ava -v",<% if (build) { %>
 		"dev": "microbundle watch",
-		"build": "microbundle",<% } %>
+		"build": "microbundle build <%= moduleName %>.js",<% } %>
 		"precommit": "lint-staged",
 		"pub" : "npm run test && npm run npmUp && npm run git",
 		"npmUp": "npm version patch && npm publish",
@@ -60,7 +60,8 @@
 		"commander": "*",
 		"turbocolor": "^2.4.5",
 		"weoptions": "*",
-		"two-log-min": "*"<% } %>
+		"two-log-min": "*",<% } %>
+		"yobrave-util": "*"
 	},
 	"devDependencies": {
 		<% if (codecov) { %>
