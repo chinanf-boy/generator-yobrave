@@ -1,6 +1,6 @@
 {
   "name": "generator-yobrave",
-  "version": "3.8.2",
+  "version": "3.8.3",
   "description": "Scaffold out a node module",
   "license": "MIT",
   "repository": "chinanf-boy/generator-yobrave",
