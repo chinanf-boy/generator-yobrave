@@ -18,7 +18,6 @@
 	},
 	"scripts": {
 		"test": "<% if (build) { %>npm run build && <% } %><% if (nyc) { %>nyc <% } %>ava -v",<% if (build) { %>
-		"dev": "microbundle watch",
 		"build": "microbundle build <%= moduleName %>.js",<% } %>
 		"precommit": "lint-staged",
 		"pub" : "npm run test && npm run npmUp && npm run git",
