@@ -5,7 +5,7 @@
 	"license": "MIT",<% if (build) { %>
 	"main":"dist/<%= moduleName %>.js",
 	"module":"dist/<%= moduleName %>.m.js",<% } %><% if (!build){ %>
-	"main":"index.js",	<% } %>
+	"main":"<%= moduleName %>.js",	<% } %>
 	"repository": "<%= githubUsername %>/<%= repoName %>",
 	"author": {
 		"name": "<%= name %>",
