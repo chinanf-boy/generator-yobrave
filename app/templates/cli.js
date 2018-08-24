@@ -9,7 +9,7 @@ const {	g,	c,	y,	b, r } = require('yobrave-util')
 const <%= camelModuleName %> = require('.');
 
 program
-  .version(require('../package.json').version, '-v, --version')
+  .version(require('./package.json').version, '-v, --version')
   .usage('<input> [options]')
 //   .command('dev [targetDir]')
 	.description('say rainbows')
