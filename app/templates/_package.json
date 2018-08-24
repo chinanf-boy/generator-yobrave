@@ -65,7 +65,8 @@
 		<% if (codecov) { %>
 		"codecov": "^3.0.2",<% } %><% if (nyc) { %>
 		"nyc": "^11.8.0",<% } %>
-		"lint-staged": "^7.0.0",<% if (build) { %>
+		"lint-staged": "^7.0.0",
+		"prettier": "*",<% if (build) { %>
 		"microbundle": "^0.4.4",<% } %>
 		"husky": "1.0.0-rc.13",
 		"ava": "^0.25.0"

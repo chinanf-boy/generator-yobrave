@@ -1,5 +1,5 @@
 'use strict';
-exports = module.exports = function <%= camelModuleName %>(input, opts) => {
+exports = module.exports = function <%= camelModuleName %>(input, opts){
 	if (typeof input !== 'string') {
 		throw new TypeError(`Expected a string, got ${typeof input}`);
 	}
