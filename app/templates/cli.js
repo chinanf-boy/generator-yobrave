@@ -17,7 +17,6 @@ program
 
 
     // wrapCommand(dev)(path.resolve(dir), { host, port })
-	})
 
 // program
 //   .arguments('<command>')
