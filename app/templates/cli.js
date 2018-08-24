@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
 'use strict';
-const meow = require('meow');
 const twoLog = require('two-log-min')
 const program = require('commander')
 const weOpts = require('./weoptions.js')

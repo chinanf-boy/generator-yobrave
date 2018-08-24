@@ -57,7 +57,6 @@
 	"dependencies":{
 		<% if (cli) { %>
 		"commander": "*",
-		"turbocolor": "^2.4.5",
 		"weoptions": "*",
 		"two-log-min": "*",<% } %>
 		"yobrave-util": "*"
