@@ -4,6 +4,8 @@
 
 [中文](./readme.md) | ~~[english](./readme.en.md)~~
 
+[![Npm version](https://runkit.io/bokub/npm-version/branches/master/<%= moduleName %>)](https://npmjs.com/package/<%= moduleName %>)
+
 ## Install
 
 <% if (cli) { %>
