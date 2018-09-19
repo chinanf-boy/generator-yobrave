@@ -87,7 +87,7 @@ test.serial('nyc option', async () => {
 	assert.noFile('weoptions.js');
 	assert.fileContent('.gitignore', /\.nyc_output/);
 	assert.fileContent('.gitignore', /coverage/);
-	assert.fileContent('package.json', /"npm run build && nyc ava"/);
+	assert.fileContent('package.json', /"xo --fix --open && npm run build && nyc ava"/);
 	assert.fileContent('package.json', /"nyc": "/);
 	assert.noFileContent('package.json', /"codecov":/);
 	assert.noFileContent('package.json', /"lcov"/);
@@ -112,7 +112,7 @@ test.serial('codecov option', async () => {
 	assert.noFile('weoptions.js');
 	assert.fileContent('.gitignore', /\.nyc_output/);
 	assert.fileContent('.gitignore', /coverage/);
-	assert.fileContent('package.json', /"nyc ava"/);
+	assert.fileContent('package.json', /"xo --fix --open && nyc ava"/);
 	assert.fileContent('package.json', /"nyc": "/);
 	assert.fileContent('package.json', /"codecov":/);
 	assert.fileContent('package.json', /"lcov"/);

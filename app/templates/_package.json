@@ -17,7 +17,7 @@
 		"node": ">=4"
 	},
 	"scripts": {
-		"test": "<% if (build) { %>npm run build && <% } %><% if (nyc) { %>nyc <% } %>ava",<% if (build) { %>
+		"test": "xo --fix --open && <% if (build) { %>npm run build && <% } %><% if (nyc) { %>nyc <% } %>ava",<% if (build) { %>
 		"build": "microbundle build <%= moduleName %>.js",<% } %>
 		"precommit": "lint-staged",
 		"pub" : "npm run test && npm run npmUp && npm run git",
@@ -69,7 +69,8 @@
 		"prettier": "*",<% if (build) { %>
 		"microbundle": "^0.4.4",<% } %>
 		"husky": "1.0.0-rc.13",
-		"ava": "^0.25.0"
+		"ava": "^0.25.0",
+		"xo"
 	}<% if (codecov) { %>,
 	"nyc": {
 		"reporter": [
