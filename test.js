@@ -78,7 +78,7 @@ test.serial('nyc option', async () => {
 		cli: false,
 		nyc: true,
 		codecov: false,
-		build:true
+		build: true
 	});
 
 	await pify(generator.run.bind(generator))();
@@ -92,7 +92,7 @@ test.serial('nyc option', async () => {
 	assert.noFileContent('package.json', /"codecov":/);
 	assert.noFileContent('package.json', /"lcov"/);
 	assert.noFileContent('.travis.yml', /codecov/);
-	assert.noFileContent('readme.md',/codecov/)
+	assert.noFileContent('readme.md', /codecov/);
 });
 
 test.serial('codecov option', async () => {
@@ -103,7 +103,7 @@ test.serial('codecov option', async () => {
 		cli: false,
 		nyc: true,
 		codecov: true,
-		build:false
+		build: false
 	});
 
 	await pify(generator.run.bind(generator))();

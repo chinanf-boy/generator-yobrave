@@ -3,6 +3,7 @@
 'use strict';
 const twoLog = require('two-log-min')
 const program = require('commander')
+const updateNotifier = require('update-notifier')
 const weOpts = require('./weoptions.js')
 const {	g,	c,	y,	b, r } = require('yobrave-util')
 
@@ -62,6 +63,8 @@ enhanceErrorMessages('optionMissingArgument', (option, flag) => {
 
 program.parse(process.argv)
 
+
+
 if (!process.argv.slice(2).length) {
   program.outputHelp((t) =>{
 		let all = t.split(require('os').EOL)
@@ -70,6 +73,8 @@ if (!process.argv.slice(2).length) {
 	process.exitCode = 1
 	return
 }
+
+updateNotifier({pkg:require('./package.json')}).notify();
 
 const log = twoLog(program.debug)
 

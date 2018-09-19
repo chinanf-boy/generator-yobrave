@@ -57,6 +57,7 @@
 	"dependencies":{
 		<% if (cli) { %>
 		"commander": "*",
+		"update-notifier": "*",
 		"weoptions": "*",
 		"two-log-min": "*",<% } %>
 		"yobrave-util": "*"

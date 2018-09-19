@@ -1,9 +1,9 @@
 const weoptions = require('weoptions')('<%= camelModuleName %>', false);
 
-let opts = {
+const opts = {
 	name: '<%= moduleName %>'
-}
+};
 
-let w = weoptions(opts);
+const w = weoptions(opts);
 
-module.exports = w
+module.exports = w;
