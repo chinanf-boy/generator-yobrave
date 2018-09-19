@@ -17,7 +17,7 @@
 		"node": ">=4"
 	},
 	"scripts": {
-		"test": "<% if (build) { %>npm run build && <% } %><% if (nyc) { %>nyc <% } %>ava -v",<% if (build) { %>
+		"test": "<% if (build) { %>npm run build && <% } %><% if (nyc) { %>nyc <% } %>ava",<% if (build) { %>
 		"build": "microbundle build <%= moduleName %>.js",<% } %>
 		"precommit": "lint-staged",
 		"pub" : "npm run test && npm run npmUp && npm run git",
@@ -37,7 +37,7 @@
 	 ],
 	"lint-staged": {
 		"linters":{
-			"*.{js,json,css,md}": [
+			"*.{js,json,md}": [
 				"prettier --single-quote --trailing-comma es5 --write",
 				 "git add"
 				]
